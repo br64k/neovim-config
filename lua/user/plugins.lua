@@ -93,6 +93,12 @@ return packer.startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
   }
+  use {
+    "NvChad/nvterm",
+    config = function ()
+      require("nvterm").setup()
+    end,
+  }
   -- use "SmiteshP/nvim-navic"
   -- use "L3MON4D3/LuaSnip"
   -- use "rafamadriz/friendly-snippets"
