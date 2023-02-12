@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use "mbbill/undotree"
   use "tpope/vim-fugitive"
+  use "tpope/vim-surround"
 
   use {
     'VonHeikemen/lsp-zero.nvim',
