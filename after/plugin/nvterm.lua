@@ -24,3 +24,6 @@ require("nvterm").setup({
     auto_insert = true,
   },
 })
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<leader>t', function () require("nvterm.terminal").toggle('float') end, opts)
