@@ -38,39 +38,53 @@ packer.init {
   },
 }
 
--- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "github/copilot.vim" -- github copilot
+  use { "folke/lazy.nvim", tag = "stable" }
+  use 'lewis6991/impatient.nvim'
+  use "wbthomason/packer.nvim"
+  use "nvim-lua/popup.nvim"
+  use "nvim-lua/plenary.nvim"
+  use "github/copilot.vim"
   use "theprimeagen/harpoon"
   use "nvim-telescope/telescope.nvim"
   use "mbbill/undotree"
   use "tpope/vim-fugitive"
   use "tpope/vim-surround"
-
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+      require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
+  }
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup {
+      }
+    end
+  }
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
     requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},           -- Optional
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},         -- Required
-      {'hrsh7th/cmp-nvim-lsp'},     -- Required
-      {'hrsh7th/cmp-buffer'},       -- Optional
-      {'hrsh7th/cmp-path'},         -- Optional
-      {'saadparwaiz1/cmp_luasnip'}, -- Optional
-      {'hrsh7th/cmp-nvim-lua'},     -- Optional
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lua'},
 
       -- Snippets
-      {'L3MON4D3/LuaSnip'},             -- Required
-      {'rafamadriz/friendly-snippets'}, -- Optional
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
     }
   }
 
@@ -81,13 +95,6 @@ return packer.startup(function(use)
       ts_update()
     end,
   }
-  -- use {
-  --   "neoclide/coc.nvim",
-  --   branch = "release",
-  -- }
-  -- use "neovim/nvim-lspconfig" -- enable LSP
-  -- use "williamboman/nvim-lsp-installer" -- install LSP servers
-
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -100,14 +107,8 @@ return packer.startup(function(use)
       require("nvterm").setup()
     end,
   }
-  -- use "SmiteshP/nvim-navic"
-  -- use "L3MON4D3/LuaSnip"
-  -- use "rafamadriz/friendly-snippets"
-  -- use "folke/tokyonight.nvim"
-  -- use "lunarvim/darkplus.nvim"
   use "EdenEast/nightfox.nvim"
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
