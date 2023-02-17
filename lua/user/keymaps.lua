@@ -23,7 +23,9 @@ keymap("n", "<S-Tab>", ":tabprevious<CR>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
+-- sorry not sorry
 keymap("n", "<C-s>", ":w<CR>", opts)
+
 -- resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
