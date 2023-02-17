@@ -8,6 +8,9 @@ Randomly pick features and plugins I like and slap them directly into my Neovim 
 
 ## Prerequesites
 
+- fd-find
+- ripgrep
+
 ## Installation
 
 ```bash

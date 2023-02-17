@@ -18,13 +18,12 @@ vim.g.maplocalleader = " "
 -- "t" - term
 -- "c" - command
 
--- TODO: Steal from nvchad tab navigation
 keymap("n", "<Tab>", ":tabNext<CR>", opts)
 keymap("n", "<S-Tab>", ":tabprevious<CR>", opts)
 
--- TODO: update to nerd tree I guess
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
+keymap("n", "<C-s>", ":w<CR>", opts)
 -- resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
