@@ -43,6 +43,12 @@ return packer.startup(function(use)
     "folke/lazy.nvim",
     tag = "stable"
   }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
   use { "lewis6991/impatient.nvim" }
   use { "wbthomason/packer.nvim" }
   use { "nvim-lua/popup.nvim" }
@@ -104,12 +110,14 @@ return packer.startup(function(use)
       "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
   }
-  use {
-    "NvChad/nvterm",
-    config = function ()
-      require("nvterm").setup()
-    end,
-  }
+
+  use "numToStr/FTerm.nvim"
+  -- use {
+  --   "NvChad/nvterm",
+  --   config = function ()
+  --     require("nvterm").setup()
+  --   end,
+  -- }
   use "EdenEast/nightfox.nvim"
 
   if PACKER_BOOTSTRAP then
