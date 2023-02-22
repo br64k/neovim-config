@@ -1,6 +1,5 @@
 local options = {
   backup = false,
-  langmap = "ФA,ИB,СC,ВD,УE,ΦF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ІS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,іs,еt,гu,мv,цw,чx,нy,яz,./",
   clipboard = "unnamedplus",
   cmdheight = 1,
   completeopt = { "menuone", "noselect" },
